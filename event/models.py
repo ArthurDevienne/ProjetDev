@@ -5,9 +5,8 @@ from fighter.models import Fighter
 
 class Event(models.Model):
     eventDate = models.DateField()
-    difficulty = models.IntegerField()
-    fighterNumber = models.IntegerField()
+    difficulty = models.IntegerField() # Will be linked to fighter indice strength
     place = models.CharField(max_length=30)
     banner = models.ImageField(upload_to ='banner/')
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
-    fighter = models.ManyToManyField(Fighter)
+    fighter = models.ForeignKey(Fighter, on_delete=models.CASCADE)

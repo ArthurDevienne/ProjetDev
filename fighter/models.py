@@ -5,7 +5,9 @@ class Fighter(models.Model):
     firstName = models.CharField(max_length=30)
     lastname = models.CharField(max_length=30)
     profileImage = models.ImageField
-    victoryNumber = models.IntegerField()
-    defeatNumber = models.IntegerField()
-    #nationality
+    weight = models.IntegerField()
+    height = models.IntegerField()
+    victory = models.IntegerField()
+    defeat = models.IntegerField()
+    nationality = models.ForeignKey(Nationality, on_delete=models.CASCADE)
 
